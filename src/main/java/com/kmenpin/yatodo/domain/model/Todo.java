@@ -1,6 +1,7 @@
 package com.kmenpin.yatodo.domain.model;
 
 public class Todo {
+	protected long id;
 	protected String title;
 	protected String deadline;
 	
@@ -15,5 +16,12 @@ public class Todo {
 	}
 	public void setDeadline(String deadline) {
 		this.deadline = deadline;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
 	}
 }
