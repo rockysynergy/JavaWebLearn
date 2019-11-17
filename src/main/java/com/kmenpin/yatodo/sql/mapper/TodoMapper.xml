@@ -11,7 +11,11 @@
 	<insert id="insertTodo" useGeneratedKeys="true" keyProperty="id">
 		insert into ytd_todo (title, deadline) values (#{title}, #{deadline})
 	</insert>
-	
+																		
+	<insert id="updateTodo" useGeneratedKeys="true" keyProperty="id">
+		update ytd_todo set title = #{title}, deadline = #{deadline} where id = #{id}
+	</insert>
+		
 	<select id="getTodo" parameterType="long" resultType="com.kmenpin.yatodo.domain.model.Todo">
 		select id, title, deadline from ytd_todo where id = #{id}
 	</select>

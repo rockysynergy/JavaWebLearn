@@ -8,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -37,4 +38,22 @@ public class TodoController {
 		todoMapper.insertTodo(todo);
 		return new RedirectView("/yatodo/ytd/todo/index");
 	}
+	
+	@RequestMapping("edit/{todoId}")
+	public String edit(ModelMap mMap, @PathVariable("todoId") long todoId) throws IOException {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
+		TodoMapper todoMapper = ctx.getBean(TodoMapper.class);
+		Todo todo = todoMapper.getTodo(todoId);
+		mMap.addAttribute("todo", todo);
+		return "edit";
+	}
+
+	@RequestMapping(value="update", method=RequestMethod.POST)
+	@ResponseBody
+	public RedirectView update(@ModelAttribute("SpringWeb")Todo todo) throws IOException {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
+		TodoMapper todoMapper = ctx.getBean(TodoMapper.class);
+		todoMapper.updateTodo(todo);
+		return new RedirectView("/yatodo/ytd/todo/index");
+	}	
 }

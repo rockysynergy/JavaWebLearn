@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+<head>
 <meta charset="utf-8" />
 <title>The todo index</title>
+</head>
 <body>
 	<h1>The Todo Index</h1>
 	

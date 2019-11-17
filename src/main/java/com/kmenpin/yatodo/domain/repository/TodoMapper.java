@@ -12,4 +12,5 @@ public interface TodoMapper {
 	public int insertTodo(Todo todo);
 	public Todo getTodo(@Param("id") Long id);
 	public List<Todo> getAllTodo();
+	public void updateTodo(Todo todo);
 }
