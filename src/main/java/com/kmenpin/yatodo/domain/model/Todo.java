@@ -1,4 +1,4 @@
-package yatodo.domain.model;
+package com.kmenpin.yatodo.domain.model;
 
 public class Todo {
 	protected String title;

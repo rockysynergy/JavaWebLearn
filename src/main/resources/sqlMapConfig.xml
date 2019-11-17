@@ -10,10 +10,10 @@
     </settings>
     
     <typeAliases>
-    	<typeAlias alias="role" type="yatodo.domain.model.Todo" />
+    	<typeAlias alias="role" type="com.kmenpin.yatodo.domain.model.Todo" />
     </typeAliases>
     
     <mappers>
-    	<mapper resource="yatodo/sql/mapper/TodoMapper.xml" />
+    	<mapper resource="com/kmenpin/yatodo/sql/mapper/TodoMapper.xml" />
     </mappers>
 </configuration>

@@ -1,8 +1,10 @@
+package com.kmenpin.yatodo;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import yatodo.domain.model.Todo;
-import yatodo.domain.repository.TodoMapper;
+import com.kmenpin.yatodo.domain.model.Todo;
+import com.kmenpin.yatodo.domain.repository.TodoMapper;
 
 public class Ceshi {
 	public static void main(String args[]) {
@@ -16,9 +18,9 @@ public class Ceshi {
 		Todo todo = new Todo();
 		todo.setTitle("Buy the milk!");
 		todo.setDeadline("2019-11-29 20:15:30");
-		todoMapper.insertTodo(todo);
+		// todoMapper.insertTodo(todo);
 		
 		Todo aTodo = todoMapper.getTodo(1L);
-		System.out.println("The todo is: " + aTodo.getTitle() + aTodo.getDeadline());
+		System.out.println("The todo is: " + aTodo.getTitle() + aTodo.getDeadline()+">>aaa");
 	}
 }

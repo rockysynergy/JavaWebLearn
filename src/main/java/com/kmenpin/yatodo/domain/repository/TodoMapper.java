@@ -1,9 +1,9 @@
-package yatodo.domain.repository;
+package com.kmenpin.yatodo.domain.repository;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import yatodo.domain.model.Todo;
+import com.kmenpin.yatodo.domain.model.Todo;
 
 @Repository
 public interface TodoMapper {

@@ -14,9 +14,9 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!-- 	<aop:aspectj-autoproxy /> -->
-
-	<bean id="todo" class="yatodo.domain.model.Todo"></bean>
+	<aop:aspectj-autoproxy />
+	
+	<bean id="todo" class="com.kmenpin.yatodo.domain.model.Todo"></bean>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
@@ -32,10 +32,10 @@
 		<property name="password" value="${jdbc.password}" />
 	</bean>
 
-	<context:property-placeholder location="db.properties" />
+	<context:property-placeholder location="classpath:db.properties" />
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="yatodo.domain.repository" />
+		<property name="basePackage" value="com.kmenpin.yatodo.domain.repository" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 		<!-- 使用sqlSessionTemplateBeanName将覆盖sqlSessionFactoryBeanName的配置 -->
 		<!-- <property name="sqlSessionTemplateBeanName" value="sqlSessionFactory"/> -->
